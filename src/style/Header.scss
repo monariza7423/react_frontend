@@ -1,0 +1,19 @@
+header{
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 270px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+header ul{
+  display: flex;
+  padding: 10px 0;
+}
+
+header li{
+  margin-left: 30px;
+  list-style: none;
+}
