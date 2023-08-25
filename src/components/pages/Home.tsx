@@ -1,12 +1,93 @@
-import { FC, memo } from "react";
+import { FC, memo, useEffect, useState } from "react";
 import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
+import '../../style/Home.scss';
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+type Work = {
+  id: number;
+  title: string;
+  text: string;
+  avatar: string;
+};
+
+type News = {
+  id: number;
+  title: string;
+  text: string;
+  avatar: string;
+  created_at: string;
+};
 
 export const Home: FC = memo(() => {
+  const [ works, setWorks ] = useState<Work[]>([{
+    id: 0,
+    title: "",
+    text: "",
+    avatar: "",
+  }]);
+
+  useEffect(() => {
+    axios
+      .get('http://127.0.0.1:8000/api/work')
+      .then((res) => setWorks(res.data))
+      .catch((error) => console.log(error));
+  },[]);
+
+  const [ news, setNews ] = useState<News[]>([{
+    id: 0,
+    title: "",
+    text: "",
+    avatar: "",
+    created_at: "",
+  }]);
+
+  function formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    return `${year}.${month}.${day}`;
+  }
+
+  useEffect(() => {
+    axios
+      .get('http://127.0.0.1:8000/api/news')
+      .then((res) => setNews(res.data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <>
       <Header />
-
+        <div className="main-visual"></div>
+        <div className="wrapper">
+          <div className="home-works">
+            <h2 className="section-title">WORKS</h2>
+            <nav>
+              <ul>
+                {works.slice(0,6).map((work) => (
+                  <li key={work.id}><img src={work.avatar} alt="ワーク画像" /></li>
+                ))}
+              </ul>
+            </nav>
+            <Link to="/works" className="home-link">See more</Link>
+          </div>
+          <div className="home-news">
+            <h2 className="section-title">NEWS</h2>
+            <dl>
+              {news.slice().reverse().slice(0, 5).map((news) => (
+                <>
+                  <dt>{formatDate(news.created_at)}</dt>
+                  <dd><Link className="link" to={`/news/${news.id}`}>{news.title}</Link></dd>
+                </>
+              ))}
+            </dl>
+            <Link to="/news" className="home-link">See more</Link>
+          </div>
+        </div>
       <Footer />
     </>
   )

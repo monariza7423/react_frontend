@@ -1,0 +1,54 @@
+.contact {
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.form {
+  margin-bottom: 30px;
+}
+
+.label{
+  float:left;
+  width: 42px;
+  margin-right: 75px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.input[type="text"] {
+  float: left;
+  width: 723px;
+  padding: 10px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.input[type="textarea"] {
+  float: left;
+  width: 723px;
+  height: 160px;
+  padding: 10px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+button{
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 53px;
+  cursor: pointer;
+}
