@@ -31,3 +31,13 @@
 .text{
   margin-bottom: 140px;
 }
+
+@media screen and (max-width: 600px){
+  .works-list li {
+    margin-bottom: 60px;
+  }
+  
+  .works-image{
+    width: 100%;
+  }
+}

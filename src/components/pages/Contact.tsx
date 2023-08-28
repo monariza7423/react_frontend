@@ -28,6 +28,7 @@ export const Contact: FC = memo(() => {
         email,
         message
     });
+
     if (response.status === 200) {
       alert("問合せ内容が正常に送信されました！");
     } else {
@@ -52,7 +53,7 @@ export const Contact: FC = memo(() => {
         </div>
         <div className="item">
           <label className="label">EMAIL</label>
-          <input type="text" value={email} onChange={onChangeEmail} className="input" />
+          <input type="email" value={email} onChange={onChangeEmail} className="input" />
         </div>
         <div className="item">
           <label className="label">MESSAGE</label>

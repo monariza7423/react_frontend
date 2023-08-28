@@ -62,32 +62,32 @@ export const Home: FC = memo(() => {
   return (
     <>
       <Header />
-        <div className="main-visual"></div>
-        <div className="wrapper">
-          <div className="home-works">
-            <h2 className="section-title">WORKS</h2>
-            <nav>
-              <ul>
-                {works.slice(0,6).map((work) => (
-                  <li key={work.id}><img src={work.avatar} alt="ワーク画像" /></li>
-                ))}
-              </ul>
-            </nav>
-            <Link to="/works" className="home-link">See more</Link>
-          </div>
-          <div className="home-news">
-            <h2 className="section-title">NEWS</h2>
-            <dl>
-              {news.slice().reverse().slice(0, 5).map((news) => (
-                <>
-                  <dt>{formatDate(news.created_at)}</dt>
-                  <dd><Link className="link" to={`/news/${news.id}`}>{news.title}</Link></dd>
-                </>
+      <div className="main-visual"></div>
+      <div className="wrapper">
+        <div className="home-works">
+          <h2 className="section-title">WORKS</h2>
+          <nav>
+            <ul>
+              {works.slice(0,6).map((work) => (
+                <li key={work.id}><img src={work.avatar} alt="ワーク画像" /></li>
               ))}
-            </dl>
-            <Link to="/news" className="home-link">See more</Link>
-          </div>
+            </ul>
+          </nav>
+          <Link to="/works" className="home-link">See more</Link>
         </div>
+        <div className="home-news">
+          <h2 className="section-title">NEWS</h2>
+          <dl>
+            {news.slice().reverse().slice(0, 5).map((news) => (
+              <>
+                <dt>{formatDate(news.created_at)}</dt>
+                <dd><Link className="link" to={`/news/${news.id}`}>{news.title}</Link></dd>
+              </>
+            ))}
+          </dl>
+          <Link to="/news" className="home-link">See more</Link>
+        </div>
+      </div>
       <Footer />
     </>
   )

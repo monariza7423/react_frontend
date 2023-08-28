@@ -31,6 +31,15 @@
   border: 1px solid #ccc;
 }
 
+.input[type="email"] {
+  float: left;
+  width: 723px;
+  padding: 10px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
 .input[type="textarea"] {
   float: left;
   width: 723px;
@@ -51,4 +60,26 @@ button{
   width: 200px;
   height: 53px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+  .item{
+    display: block;
+    flex-direction: column;
+  }
+
+  .input[type="text"] {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .input[type="email"] {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .input[type="textarea"] {
+    width: 100%;
+    margin-left: 0;
+  }
 }

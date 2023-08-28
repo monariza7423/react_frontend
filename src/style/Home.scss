@@ -9,7 +9,7 @@
 }
 
 .wrapper{
-  min-width: 960px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 4% 240px 4%;
 }
@@ -19,9 +19,9 @@
   display: inline-block;
   box-sizing: border-box;
   color: #000;
-  text-decoration: none; /* 通常の下線を削除 */
-    border-bottom: 1px solid currentColor; /* 現在の文字色を使用して下線を追加 */
-    padding-bottom: 5px;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 5px;
 }
 
 .section-title{
@@ -52,4 +52,41 @@
 
 .home-news{
   text-align: center;
+}
+
+@media screen and (max-width: 600px){
+  .section-title{
+    margin-bottom: 40px;
+  }
+
+  .main-visual {
+    background-image: url(/images/mainvisual-sp.jpg);
+    margin-top: 10px;
+  }
+
+  .home-works ul{
+    flex-direction: column;
+  }
+
+  .home-works li {
+    width: 100%;
+  }
+
+  .home-works img{
+    width: 100%;
+  }
+
+  .home-news dl{
+    flex-direction: column;
+  }
+
+  .home-news dt{
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .home-news dd{
+    width: 100%;
+    padding-top: 0;
+  }
 }

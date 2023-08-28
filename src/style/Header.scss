@@ -22,3 +22,21 @@ header li{
   margin-left: 30px;
   list-style: none;
 }
+
+@media screen and (max-width: 600px){
+  header{
+    margin-top: 15px;
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  header li{
+    font-size: 0.8rem;
+    margin-left: 20px;
+  }
+
+  header li:first-child {
+    margin-left: 0;
+  }
+}
