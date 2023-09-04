@@ -36,22 +36,46 @@
 
 .home-works ul{
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
 }
 
 .home-works li {
-  width: 31%;
+  width: 33%;
   margin-bottom: 40px;
   list-style: none;
 }
 
 .home-works li img{
-  max-width: 100%;
+  width: 264px;
+  height: 172px;
 }
 
 .home-news{
   text-align: center;
+}
+
+.home-news dl{
+  display: flex;
+  flex-wrap: wrap;
+  border-top: solid 1px #c8c8c8;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.home-news dt{
+  width: 20%;
+  border-bottom: solid 1px #c8c8c8;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.home-news dd{
+  width: 80%;
+  border-bottom: solid 1px #c8c8c8;
+  padding: 15px 0;
+  margin: 0;
+  text-align: left;
 }
 
 @media screen and (max-width: 600px){

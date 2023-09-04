@@ -7,6 +7,7 @@ import { Works } from "../components/pages/Works";
 import { NewsIndex } from "../components/pages/NewsIndex";
 import { NewsDetail } from "../components/pages/NewsDetail";
 import { Contact } from "../components/pages/Contact";
+import { ContactComplete } from "../components/pages/ContactComplete";
 
 export const Router: FC = memo(() => {
   return (
@@ -19,6 +20,7 @@ export const Router: FC = memo(() => {
           <Route path="/news" element={<NewsIndex />} />
           <Route path="/news/:newsId" element={<NewsDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/contact_complete" element={<ContactComplete />} />
         </Route>
         <Route path="/*" element={<Page404 />} />
       </Routes>

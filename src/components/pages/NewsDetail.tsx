@@ -4,14 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
 import "../../style/NewsDetail.scss";
+import type { News } from "../../types/news";
 
-type News = {
-  id: number;
-  title: string;
-  text: string;
-  avatar: string;
-  created_at: string;
-};
 
 export const NewsDetail: FC = memo(() => {
   const { newsId } = useParams<{ newsId: string }>();
@@ -43,8 +37,7 @@ export const NewsDetail: FC = memo(() => {
         <h1 className="page-title">{news?.title}</h1>
         <div className="news-content">
           <p className="date">{news ? formatDate(news.created_at) : 'Loading...'}</p>
-          <p>{news?.text}</p>
-          <img className="news-image" src={news?.avatar} alt="ニュース画像" />
+          <div className="content" dangerouslySetInnerHTML={{ __html: news?.html_content || '' }} />
         </div>
         <Link className="news-link" to="/news">一覧に戻る</Link>
       </div>

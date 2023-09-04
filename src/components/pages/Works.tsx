@@ -3,21 +3,10 @@ import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
 import axios from "axios";
 import '../../style/Works.scss'
-
-type Work = {
-  id: number;
-  title: string;
-  text: string;
-  avatar: string;
-};
+import type { Work } from "../../types/work";
 
 export const Works: FC = memo(() => {
-  const [ works, setWorks ] = useState<Work[]>([{
-    id: 0,
-    title: "",
-    text: "",
-    avatar: "",
-  }]);
+  const [ works, setWorks ] = useState<Work[]>([]);
 
   useEffect(() => {
     axios

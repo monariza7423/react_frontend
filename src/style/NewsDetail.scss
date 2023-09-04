@@ -2,7 +2,6 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 4% 240px 4%;
-  align-items: center;
 }
 
 .single{
@@ -42,15 +41,15 @@
 }
 
 .news-content {
-  max-width: 800px; /* この値は、実際のコンテンツの幅に応じて調整してください */
+  max-width: 800px;
   margin: 0 auto;
-  text-align: center; /* テキストやイメージも中央に配置する場合は追加 */
+  text-align: center;
 }
 
 .news-image {
   width: 640px;
   height: 420px;
-  display: block; /* イメージをブロック要素として扱い、その上で以下のマージンを適用 */
+  display: block;
   margin: 0 auto;
 }
 
@@ -67,4 +66,14 @@
   text-align: center;
   display: block;
   margin-top: 30px;
+}
+
+.content{
+  p {
+    text-align: left;
+  }
+
+  img{
+    width: 100%;
+  }
 }

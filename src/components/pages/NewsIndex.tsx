@@ -4,23 +4,10 @@ import { Link } from "react-router-dom";
 import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
 import "../../style/NewsIndex.scss";
-
-type News = {
-  id: number;
-  title: string;
-  text: string;
-  avatar: string;
-  created_at: string;
-};
+import type { News } from "../../types/news";
 
 export const NewsIndex: FC = memo(() => {
-  const [ news, setNews ] = useState<News[]>([{
-    id: 0,
-    title: "",
-    text: "",
-    avatar: "",
-    created_at: "",
-  }]);
+  const [ news, setNews ] = useState<News[]>([]);
 
   const [ maxDisplay, setMaxDisplay] = useState(5);
   const [ allNewsDisplayed, setAllNewsDisplayed] = useState(false);
@@ -49,16 +36,18 @@ export const NewsIndex: FC = memo(() => {
   return (
     <>
       <Header />
-      <div className="news wrapper">
+      <div className="wrapper">
         <h1 className="page-title">NEWS</h1>
-        <dl>
-          {news.slice(0, maxDisplay).map((news) => (
-            <>
-              <dt>{formatDate(news.created_at)}</dt>
-              <dd><Link className="link" to={`/news/${news.id}`}>{news.title}</Link></dd>
-            </>
-          ))}
-        </dl>
+        <div className="news-title">
+          <dl>
+            {news.slice(0, maxDisplay).map((news, index) => (
+              <div key={index}>
+                <dt>{formatDate(news.created_at)}</dt>
+                <dd><Link className="link" to={`/news/${news.id}`}>{news.title}</Link></dd>
+              </div>
+            ))}
+          </dl>
+        </div>
         {!allNewsDisplayed && (
           <button
             onClick={() => {

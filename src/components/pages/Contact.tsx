@@ -3,11 +3,13 @@ import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
 import axios from "axios";
 import '../../style/Contact.scss';
+import { useNavigate } from "react-router-dom";
 
 export const Contact: FC = memo(() => {
   const [ name, setName ] = useState("");
   const [ email, setEmail ] = useState("");
   const [ message, setMessage ] = useState("");
+  const navigate = useNavigate();
 
   const onChangeName = (e:React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -30,7 +32,7 @@ export const Contact: FC = memo(() => {
     });
 
     if (response.status === 200) {
-      alert("問合せ内容が正常に送信されました！");
+      navigate("/contact_complete");
     } else {
       alert("問題が発生しました。もう一度お試しください。");
     }
