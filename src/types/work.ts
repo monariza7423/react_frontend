@@ -2,5 +2,5 @@ export type Work = {
   id: number;
   title: string;
   text: string;
-  avatar: string;
+  image_url: string;
 };

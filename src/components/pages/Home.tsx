@@ -53,7 +53,7 @@ export const Home: FC = memo(() => {
           <nav>
             <ul>
               {works.map((work) => (
-                <li key={work.id}><img src={work.avatar} alt="ワーク画像" /></li>
+                <li key={work.id}><img src={work.image_url} alt="ワーク画像" /></li>
               ))}
             </ul>
           </nav>

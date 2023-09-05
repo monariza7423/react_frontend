@@ -17,7 +17,7 @@ export const Contact: FC = memo(() => {
   const onChangeEmail = (e:React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   }
-  const onChangeMessage = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeMessage = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   }
 
@@ -59,7 +59,7 @@ export const Contact: FC = memo(() => {
         </div>
         <div className="item">
           <label className="label">MESSAGE</label>
-          <input type="textarea" value={message} onChange={onChangeMessage} className="input" />
+          <textarea value={message} onChange={onChangeMessage} className="textarea-input"></textarea>
         </div>
         <button type="submit">送信</button>
       </form>

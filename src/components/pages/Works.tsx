@@ -24,7 +24,7 @@ export const Works: FC = memo(() => {
         <ul className="works-list">
           {works.map((work) => (
             <li key={work.id}>
-              <img className="works-image" src={work.avatar} alt="ワーク画像" />
+              <img className="works-image" src={work.image_url} alt="ワーク画像" />
               <p className="title">{work.title}</p>
               <p className="text">{work.text}</p>
             </li>
